@@ -14,15 +14,14 @@ class ActorsController < ApplicationController
   end
 
   def create_row
-    actor = Actor.new
+    @actor = Actor.new
     
-    actor = Actor.new
-    actor.dob = params[:dob]
-    actor.name = params[:name]
-    actor.bio = params[:bio]
-    actor.image_url = params[:image_url]
+    @actor.dob = params[:the_dob]
+    @actor.name = params[:the_name]
+    @actor.bio = params[:the_bio]
+    @actor.image_url = params[:the_image_url]
 
-    actor.save
+    @actor.save
 
     render("show")
   end
@@ -33,21 +32,21 @@ class ActorsController < ApplicationController
   end
 
   def update_row
-    actor = Actor.find(params[:id])
+    @actor = Actor.find(params[:id])
 
-    actor.dob = params[:dob]
-    actor.name = params[:name]
-    actor.bio = params[:bio]
-    actor.image_url = params[:image_url]
+    @actor.dob = params[:the_dob]
+    @actor.name = params[:the_name]
+    @actor.bio = params[:the_bio]
+    @actor.image_url = params[:the_image_url]
 
-    actor.save
+    @actor.save
 
     render("show")
   end
 
   def destroy
-    actor = Actor.find(params[:id])
-    actor.destroy
+    @actor = Actor.find(params[:id])
+    @actor.destroy
     redirect_to("/actors")
   end
 end
