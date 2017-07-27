@@ -33,9 +33,9 @@ class RolesController < ApplicationController
   def update_row
     @role = Role.find(params[:id])
 
-    @role.character_name = params[:the_character_name]
-    @role.movie_id = params[:the_movie_id]
-    @role.actor_id = params[:the_actor_id]
+    @role.character_name = params[:character_name]
+    @role.movie_id = params[:movie_id]
+    @role.actor_id = params[:actor_id]
 
     @role.save
 
