@@ -22,7 +22,7 @@ class RolesController < ApplicationController
 
     @role.save
 
-    render("show")
+    redirect_to("/roles/#{@role.id}")
   end
 
   def edit_form
